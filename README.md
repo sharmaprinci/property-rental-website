@@ -1,5 +1,9 @@
 # Property Rental Platform
 
+https://totality-frontend-challenge-six-delta.vercel.app/
+
+This is the deployed project link
+
 ## Overview
 
 The Property Rental Platform is a user-friendly web application developed using React. It allows users to browse, explore, and book rental properties with ease. Designed with a responsive layout, the platform ensures that users can access it seamlessly on any device, whether it's a desktop, tablet, or smartphone.
