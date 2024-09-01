@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -15,12 +18,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 60px; /* Adjust based on your header height */
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0 20px; /* Add padding to prevent content from touching the edges */
   color: white;
 }
 
@@ -34,5 +36,28 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    padding: 10px 5px;
+  }
+
+  .App-logo {
+    height: 20vmin;
   }
 }
