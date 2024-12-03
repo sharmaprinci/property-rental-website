@@ -1,6 +1,6 @@
 # Property Rental Platform
 
-https://totality-frontend-challenge-six-delta.vercel.app/
+https://property-rental-website-nine.vercel.app/
 
 This is the deployed project link
 
