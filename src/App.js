@@ -1,17 +1,18 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { Route, BrowserRouter as Router, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
 import Cart from './Components/Cart';
 import ContactPage from './Components/ContactPage';
+import Dashboard from './Components/Dashboard';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Login from './Components/Login';
+import MyProperties from './Components/MyProperties'; // Import MyProperties component
 import SignUp from './Components/Signup';
 import AboutUs from './pages/AboutUs';
-import Dashboard from './pages/Dashboard';
 import HomePage from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Properties from './pages/Properties';
 import TestimonialPage from './pages/TestimonialPage';
-
 
 export const AuthContext = createContext();
 
@@ -28,7 +29,6 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(!!user);
 
-  const navigate = useNavigate();
   const location = useLocation(); 
 
   useEffect(() => {
@@ -96,6 +96,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
             <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
             <Route path="/cart" element={
@@ -110,8 +111,10 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/dashboard" element={<Dashboard onBookNow={handleBookNow} />} />
+            <Route path="/properties" element={<Properties onBookNow={handleBookNow} />} />
             <Route path="/testimonials" element={<TestimonialPage />} />
+            <Route path="/my-properties" element={<MyProperties addToCart={handleBookNow} />} />
+ {/* Add route for MyProperties */}
           </Routes>
 
           {location.pathname !== '/cart' && <TestimonialPage />}

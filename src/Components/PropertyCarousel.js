@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import '../CSS/style.css';
 import PropertyCard from './PropertyCard';
 
 

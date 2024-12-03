@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { FaBars, FaHome, FaInfoCircle, FaShoppingCart, FaSignInAlt, FaSignOutAlt, FaTachometerAlt, FaUser, FaUserPlus } from 'react-icons/fa';
+import { FaBars, FaHome, FaInfoCircle, FaShoppingCart, FaSignInAlt, FaSignOutAlt, FaTachometerAlt, FaUserPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../App';
-import '../CSS/style.css';
 
 function Header({ cart }) {
   const { user, handleLogout } = useContext(AuthContext); 
@@ -33,16 +32,20 @@ function Header({ cart }) {
               </Link>
             </li>
             <li>
+              <Link to="/dashboard">
+                <FaTachometerAlt /> Dashboard
+              </Link>
+            </li>
+            <li>
               <Link to="/about">
                 <FaInfoCircle /> About Us
               </Link>
             </li>
             <li>
-              <Link to="/dashboard">
-                <FaTachometerAlt /> Dashboard
+              <Link to="/properties">
+                <FaHome /> Properties
               </Link>
             </li>
-            
             <li>
               <Link to="/cart">
                 <FaShoppingCart /> Cart
@@ -53,18 +56,29 @@ function Header({ cart }) {
             </li>
             {user ? (
               <>
-              <li>
-                  <button onClick={handleLogout} className="logout-button">
-                    <FaSignOutAlt />
-                    Logout
-                  </button>
-                </li>
                 <li>
-                  <Link to="/profile">
-                    <FaUser /> {user.name}
+                  <Link to="/profile" className="user-link">
+                    {/* Display the user avatar and name horizontally */}
+                    {user.avatar && (
+                      <img
+                        src={user.avatar}
+                        alt="User Avatar"
+                        style={{
+                          width: '30px',
+                          height: '30px',
+                          borderRadius: '50%',
+                          marginRight: '10px',
+                        }}
+                      />
+                    )}
+                    {user.name}
                   </Link>
                 </li>
-                
+                <li>
+                  <button onClick={handleLogout} className="logout-button">
+                    <FaSignOutAlt /> Logout
+                  </button>
+                </li>
               </>
             ) : (
               <>

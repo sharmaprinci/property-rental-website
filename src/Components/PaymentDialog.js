@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../CSS/style.css';
+
 
 const PaymentDialog = ({ isOpen, onClose, orderDetails, onPaymentComplete }) => {
   const [paymentMethod, setPaymentMethod] = useState('Credit Card');

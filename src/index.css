@@ -209,7 +209,7 @@
   .footer-bottom {
     text-align: center;
     margin-top: 20px;
-    border-top: 1px solid #444;
+    border-top: 1px solid #fff;
     padding-top: 10px;
   }
   
@@ -1154,7 +1154,7 @@ body {
   }
   
   .hero {
-    background-image: url('../images/charming house.jpg'); 
+    background-image: url('./images/charming house.jpg'); 
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -1546,3 +1546,189 @@ body {
   }
   
 }
+
+/* dashboard */
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  border-right: 1px solid gray;
+  width: 250px;
+  background-color: #f4f4f4;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+.sidebar ul li button {
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th, .dashboard-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.profile-details {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+/* profile section */
+
+.profile-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-section {
+  padding: 20px;
+  margin: 20px;
+}
+.avatar-container {
+  display: flex;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.avatar-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #eee;
+  border-radius: 50%;
+  display: flex;
+  color: #aaa;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-field {
+  margin-bottom: 15px;
+}
+
+.profile-field label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.profile-field p, .input-field {
+  font-size: 1rem;
+}
+
+.input-field {
+  width: 50%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.update-message {
+  color: green;
+  margin-top: 10px;
+}
+
+/* my properties */
+
+.my-properties-section {
+  padding: 20px;
+}
+
+.property-form {
+  margin-bottom: 20px;
+}
+
+.property-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.property-card img {
+  margin-bottom: 10px;
+}
+
+.update-message {
+  color: green;
+}
+

@@ -1,26 +1,27 @@
 import React from 'react';
-import '../CSS/style.css';
 
 function PropertyCard({ property, onBookNow }) {
   const handleClick = () => {
     onBookNow(property);
   };
 
-  const propertyClass = `property-card-${property.id}`;
-
   return (
-    <div className={`property-card ${propertyClass}`}>
-    <div className="property-details">
-      <div className='property-data'>
-        <h3>{property.name}</h3>
-        <p className="price">${property.price}</p>
-        <p>{property.property_type}</p>
-        <p>{property.bedrooms} bedrooms, {property.bathrooms} bathrooms</p>
+    <div className={`property-card property-card-${property.id}`}>
+      <div className="property-details">
+        <div className="property-info">
+          <h3 className="property-name">{property.name}</h3>
+          <p className="property-price">${property.price}</p>
+          <p className="property-type">{property.property_type}</p>
+          <p className="property-features">
+            {property.bedrooms} bedrooms, {property.bathrooms} bathrooms
+          </p>
+        </div>
+        <div className="action-btn">
+          <button className="book-now-btn" onClick={handleClick}>
+            Book Now
+          </button>
+        </div>
       </div>
-      <div className='btn'>
-        <button onClick={handleClick}>Book Now</button>
-      </div>
-    </div>
     </div>
   );
 }

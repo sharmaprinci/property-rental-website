@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../CSS/style.css';
 
 import apartment from '../images/apartment.jpg';
 function PropertyDetails({ onBookNow }) {

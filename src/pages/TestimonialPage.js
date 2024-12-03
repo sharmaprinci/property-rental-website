@@ -2,7 +2,6 @@ import React from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import '../CSS/style.css';
 
 const testimonials = [
   {

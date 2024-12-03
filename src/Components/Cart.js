@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../App';
-import '../CSS/style.css';
 import Checkout from './Checkout';
 import Modal from './Model';
 import PaymentDialog from './PaymentDialog';
@@ -27,12 +26,33 @@ const Cart = ({ cart, removeProperty, increaseQuantity, decreaseQuantity, clearC
   };
 
   const handlePaymentComplete = () => {
+    // Save the order to local storage
+    const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+    const newBookings = cart.map(property => ({
+      id: property.id,
+      propertyName: property.name,
+      date: new Date().toLocaleDateString(), // Set the booking date to today
+      totalCost: property.price * property.quantity,
+    }));
+
+    // Add new bookings to existing bookings
+    const updatedBookings = [...existingBookings, ...newBookings];
+    localStorage.setItem('bookings', JSON.stringify(updatedBookings));
+
+    // Optionally save properties as booked (if needed)
+    const existingProperties = JSON.parse(localStorage.getItem('properties')) || [];
+    const updatedProperties = existingProperties.map(property => {
+      if (cart.some(item => item.id === property.id)) {
+        return { ...property, status: 'Booked' }; // Update the status if booked
+      }
+      return property;
+    });
+    localStorage.setItem('properties', JSON.stringify(updatedProperties));
+
     clearCart();
     setOrderDetails(null); 
     setIsPaymentDialogOpen(false); 
     setIsCartEmptyMessageVisible(true); 
-
-    // navigate('/'); 
   };
 
   const handleCheckoutClick = () => {

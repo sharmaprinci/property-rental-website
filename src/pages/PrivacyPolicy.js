@@ -1,5 +1,4 @@
 import React from 'react';
-import '../CSS/style.css'; // Ensure you create and style this CSS file
 
 const PrivacyPolicy = () => {
   return (

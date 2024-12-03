@@ -3,9 +3,9 @@ import PropertyCard from '../Components/PropertyCard';
 import PropertyCarousel from '../Components/PropertyCarousel';
 import properties from '../data/data';
 
-const Dashboard = ({ onBookNow }) => {
+const Properties = ({ onBookNow }) => {
   return (
-    <div className="dashboard">
+    <div className="properties">
       <PropertyCarousel properties={properties} onBookNow={onBookNow} />
       <div className="property-cards">
         {properties.map(property => (
@@ -20,4 +20,4 @@ const Dashboard = ({ onBookNow }) => {
   );
 };
 
-export default Dashboard;
+export default Properties;

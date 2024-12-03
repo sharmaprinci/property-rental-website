@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../CSS/style.css';
+
 
 const Checkout = ({ cart, totalCost, onCheckout }) => {
   const [name, setName] = useState('');
